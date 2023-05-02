@@ -1,0 +1,84 @@
+/*mystyle.css
+* Module 7 Assignment 
+* Name: Brittany Kyncl
+* Date: 4.15.23
+* Course: CSD420
+* styling for entire application window and each GUI component
+*/
+
+.root {
+    -fx-background-color: rgb(187, 190, 190);
+}
+.splitpane {
+    -fx-pref-height: 500px;
+}
+.gridpane {
+    -fx-alignment: center;
+    -fx-min-width: 650px;
+}
+.vbox {
+    -fx-spacing: 20px;
+    -fx-padding: 10px;
+    -fx-font-size: 18px;
+    -fx-pref-width: 200px;
+}
+.heading {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-translate-x: 10px;
+    -fx-padding: 50px 0 50px 0;
+
+}
+.subheading, .radiobutton {
+    -fx-font-size: 15px;
+    -fx-translate-x: 40px;
+}
+.button {
+    -fx-translate-x: 15px;
+    -fx-translate-y: 50px;
+    -fx-pref-width: 150px;
+    -fx-background-radius: 20px;
+    -fx-background-color:  rgb(9, 168, 168);
+    -fx-text-fill: white;
+}
+.button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 0);
+}
+.plainstackpain {
+    -fx-pref-height: 500px;
+    -fx-border-color: transparent;
+    -fx-border-width: 5px;
+}
+.border{
+    -fx-border-color: black;
+    -fx-border-width: 5px;
+    /*optional border radius(sharp edges are scary)*/
+    /* -fx-border-radius: 10px;   */
+}
+.plaincircle {
+    -fx-fill: white;
+    -fx-stroke: black;
+    -fx-stroke-width: 3px;
+}
+.circleborder{
+    -fx-stroke-width: 5px;
+    -fx-stroke-dash-array: 30 10 16 10;
+}
+#redcircle {
+    -fx-fill: red;
+    -fx-stroke: red;
+    -fx-stroke-width: 3px;
+}
+#greencircle {
+    -fx-fill: green;
+    -fx-stroke: green;
+    -fx-stroke-width: 3px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CreateTable",
+            "request": "launch",
+            "mainClass": "CreateTable",
+            "projectName": "mod-9_98c1b69e"
+        },
+        {
+            "type": "java",
+            "name": "SQLClient",
+            "request": "launch",
+            "mainClass": "SQLClient",
+            "projectName": "mod-9_98c1b69c"
+        },
+        {
+            "type": "java",
+            "name": "SQLClient",
+            "request": "launch",
+            "mainClass": "SQLClient",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-19.0.2.1/lib\" --add-modules javafx.controls,javafx.fxml",
+            "projectName": "mod-9_98c1b69c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.TableView?>
+
+<!--sqlcrud.fxml
+ Module  Assignment 
+ Name: Brittany Kyncl
+ Date: 4.28.23
+ Course: CSD420
+ Defines structure and style of user interface for SQLclient 
+-->
+<BorderPane style="-fx-padding: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cruddemo.MainController">
+    <top>
+        <HBox alignment="CENTER">
+            <VBox spacing="5" prefWidth="315.0">
+                <Label text="Enter Database Information"/>
+                <GridPane hgap="10" style="-fx-border-width: 2px; -fx-border-color: #CAC6C4; -fx-padding: 5;">
+                    <Label text="Database URL" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-padding: 0 0 10 0;"/>
+                    <Label fx:id="comboURL" GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-padding: 0 0 10 0;"/>
+                    <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="inputUsername" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <PasswordField fx:id="inputPassword" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Label fx:id="lblConnectionStatus" text="No Connection Now " maxWidth="230"  wrapText="true"/>
+                    <Button fx:id="btConnectDB" text="Connect"/>
+                </HBox>
+                <VBox spacing="5" alignment="CENTER_RIGHT">
+                    <TextArea prefHeight="240" fx:id="taSQLResult"/>
+                    <Button fx:id="btnClrtaSQLResult" text="Clear Messages"/>
+                </VBox>
+            </VBox>
+            <VBox spacing="5" style="-fx-padding: 20 0 10 20">
+                <ScrollPane fitToHeight="true" fitToWidth="true"
+                                        minWidth="450" minHeight="200"
+                                        maxWidth="Infinity" maxHeight="Infinity">
+                    <TableView fx:id="tableView">
+                    </TableView>
+                </ScrollPane>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Label text="Showing Table:"/>
+                    <Label fx:id="currentTable" text="N/A"/>
+                    <Button fx:id="btnRefreshTable" text="Refresh Table"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+            <Label text="Enter Record ID To Update/Delete"/> 
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 0 10 0;">
+                    <Label text="Enter Record ID"/>
+                    <TextField fx:id="recordID"/>
+                    <Button fx:id="btnShowRecord" text="Show Record"/>
+                    <Button fx:id="delete" text="Delet Record"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20">
+            <VBox spacing="10" alignment="TOP_CENTER" prefWidth="380" prefHeight="250" style="-fx-border-width: 2px; -fx-border-color: #CAC6C4; -fx-padding: 5;">
+                <Label text="Edit Current Record"/> 
+                <GridPane alignment="CENTER" fx:id="editGrid" hgap="10" vgap="10">
+                    <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="idTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label text="firstname:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="firstnameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="lastname:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="lastnameTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="favoriteteam:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="teamTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="first" text="First"/>
+                    <Button fx:id="previous" text="Prev."/>
+                    <Button fx:id="next" text="Next"/>
+                    <Button fx:id="last" text="Last"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="submit" text="Submit Changes"/>
+                    <Button fx:id="btnClearRecord" text="Clear Changes"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10" alignment="TOP_CENTER" prefWidth="380" prefHeight="250" style="-fx-border-width: 2px; -fx-border-color: #CAC6C4; -fx-padding: 5;">
+                <Label text="Insert New Record Into Current Table"/> 
+                <GridPane alignment="CENTER" fx:id="submitGrid" hgap="10" vgap="10">
+                    <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="idInput" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label text="firstname:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="firstnameInput" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="lastname:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="lastnameInput" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="favoriteteam:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="teamInput" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="create" text="Create Record"/>
+                    <Button fx:id="cancel" text="Clear"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </bottom>
+</BorderPane>

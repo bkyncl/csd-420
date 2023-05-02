@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.Circle?>
+
+<!--shapes.fxml
+ Module 7 Assignment 
+ Name: Brittany Kyncl
+ Date: 4.15.23
+ Course: CSD420
+ Defines structure and style of user interface for ShapeDisplay program and specifies MainController class
+-->
+
+<!-- Define the main SplitPane element with a controller and stylesheet -->
+<SplitPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shapedisplay.MainController" styleClass="splitpane" >
+    <items>
+        <!-- Define a VBox container for the UI controls on the left side of the SplitPane -->
+        <VBox styleClass="vbox">
+            <Label text="${'Shape Display\nProgram'}" styleClass="heading"/>
+            <!-- Define a toggle group for the radio buttons -->
+            <fx:define>
+                <ToggleGroup fx:id="toggleGroup" />
+            </fx:define>
+            <Label text="Display Toggle" styleClass="subheading"/>
+            <!-- Add radio buttons for the static display and dynamic display toggle options -->
+            <RadioButton fx:id="option1" text="Static" toggleGroup="$toggleGroup" styleClass="radiobutton" />
+            <RadioButton fx:id="option2" text="Dynamic" toggleGroup="$toggleGroup" styleClass="radiobutton" />
+            <!-- Add a button to exit the display -->
+            <Button fx:id="button2" text="Exit Display" styleClass="button"  />
+        </VBox>
+        <!-- Define a GridPane container for the circles on the right side of the SplitPane
+            each circle is within a stackpane container and each stackpane container is within a grid column -->
+        <GridPane styleClass="gridpane">
+            <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" fx:id="stackpane1" styleClass="plainstackpain, border" >
+                <!-- Add a circle with a radius of 70 with plaincircle style -->
+                <Circle fx:id="circle1" radius="70" styleClass="plaincircle" />
+            </StackPane>
+            <StackPane GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="stackpane2" styleClass="plainstackpain" >
+                <!-- Add a circle with a radius of 70 with plaincircle style and dashed circleborder style -->
+                <Circle fx:id="circle2" radius="70" styleClass="plaincircle, circleborder" />
+            </StackPane>
+            <StackPane GridPane.rowIndex="0" GridPane.columnIndex="2" fx:id="stackpane3" styleClass="plainstackpain" >
+                <!-- Add a circle with a radius of 70 with id style of redcircle -->
+                <Circle fx:id="circle3" radius="70" id="redcircle" />
+            </StackPane>
+            <StackPane GridPane.rowIndex="0" GridPane.columnIndex="3" fx:id="stackpane4" styleClass="plainstackpain" >
+                <!-- Add a circle with a radius of 70 with id style of greencircle -->
+                <Circle fx:id="circle4" radius="70" id="greencircle" />
+            </StackPane>
+        </GridPane>
+    </items>
+</SplitPane>

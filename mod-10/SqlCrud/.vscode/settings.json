@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar"
+        ],
+        "exclude": [
+            "c:\\Program Files\\Java\\javafx-sdk-19.0.2.1\\lib\\javafx.media.jar"
+        ]
+    }
+}
